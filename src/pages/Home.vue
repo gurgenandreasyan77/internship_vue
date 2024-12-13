@@ -26,20 +26,19 @@
 <!--        <button @click="down"  class="p-4 border mx-8">-->
 <!--            down-->
 <!--        </button>-->
-<!--    </template>-->
 </template>
 
 <script setup>
 import {
-    computed,
-    onBeforeMount,
-    onBeforeUnmount,
-    onBeforeUpdate,
-    onMounted, onUnmounted,
-    onUpdated,
-    reactive,
-    ref,
-    watch
+  computed,
+  onBeforeMount,
+  onBeforeUnmount,
+  onBeforeUpdate,
+  onMounted, onUnmounted,
+  onUpdated,
+  reactive,
+  ref,
+  watch
 } from "vue";
 import Numbers from "@/components/Numbers.vue";
 import {useRoute, useRouter} from "vue-router";
@@ -51,26 +50,26 @@ const route = useRoute()
 let test = 1;
 const test2 = ref(2)
 const test3 = reactive({
-    number: 3,
+  number: 3,
 })
 
 const array = [1, 2, 3, 4, 5]
 console.log('created');
 
 const sum = computed(() => {
-    return test + test2.value + test3.number
+  return test + test2.value + test3.number
 })
 
 function up() {
-    test +=1;
-    test2.value +=1;
-    test3.number +=1;
+  test += 1;
+  test2.value += 1;
+  test3.number += 1;
 }
 
 function down() {
-    test -=1;
-    test2.value -=1;
-    test3.number -=1;
+  test -= 1;
+  test2.value -= 1;
+  test3.number -= 1;
 }
 
 // watch(sum, (value, oldValue) => {
@@ -119,7 +118,7 @@ async function getSpecifications() {
 }
 
 onBeforeMount(() => {
-    console.log('before mounted');
+  console.log('before mounted');
 })
 
 onMounted(() => {
@@ -128,19 +127,19 @@ onMounted(() => {
 })
 
 onBeforeUpdate(() => {
-    console.log('before update')
+  console.log('before update')
 })
 
 onUpdated(() => {
-    console.log('updated')
+  console.log('updated')
 })
 
 onBeforeUnmount(() => {
-    console.log('before unmounted')
+  console.log('before unmounted')
 })
 
 onUnmounted(() => {
-    console.log('unmounted')
+  console.log('unmounted')
 })
 
 </script>

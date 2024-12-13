@@ -15,17 +15,17 @@
 import {computed, onBeforeUnmount, onUnmounted, ref, toRef, watch} from "vue";
 
 const props = defineProps({
-    test: Number,
-    test2: {
-        type: [Number, String],
-        required: true
-    },
-    test3: {
-        type: Object
-    },
-    sum: {
-        type: Number
-    },
+  test: Number,
+  test2: {
+    type: [Number, String],
+    required: true
+  },
+  test3: {
+    type: Object
+  },
+  sum: {
+    type: Number
+  },
 })
 
 const emit = defineEmits(['update:test2']);
@@ -46,19 +46,19 @@ watch(customTest, () => {
 
 const input = ref('')
 const backgroundColor = computed(() => {
-    return {
-        'bg-red-600': props.test2 > 4,
-        'bg-green-600': props.test2 <= 4,
-    }
+  return {
+    'bg-red-600': props.test2 > 4,
+    'bg-green-600': props.test2 <= 4,
+  }
 })
 
 console.log('Number component created')
 
 onBeforeUnmount(() => {
-    console.log('Number component before unmounted')
+  console.log('Number component before unmounted')
 })
 
 onUnmounted(() => {
-    console.log('Number component unmounted')
+  console.log('Number component unmounted')
 })
 </script>
