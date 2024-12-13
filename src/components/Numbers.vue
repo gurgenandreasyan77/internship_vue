@@ -6,12 +6,13 @@
         <p class="text-custom">{{ test2 }}</p>
         <p>{{ test3.number }}</p>
         <p>{{ sum }}</p>
+        <input class="border border-red" type="number" v-model="customTest">
         <slot/>
     </div>
 </template>
 
 <script setup>
-import {computed, onBeforeUnmount, onUnmounted} from "vue";
+import {computed, onBeforeUnmount, onUnmounted, ref, toRef, watch} from "vue";
 
 const props = defineProps({
     test: Number,
@@ -27,6 +28,23 @@ const props = defineProps({
     },
 })
 
+const emit = defineEmits(['update:test2']);
+const customTest = toRef(props.test2)
+
+watch(props.test2, () => {
+  customTest.value = props.test2
+})
+
+watch(customTest, () => {
+  console.log(customTest.value, props.test2);
+  if (customTest.value !== props.test2) {
+    emit('update:test2', customTest.value);
+  }
+})
+
+
+
+const input = ref('')
 const backgroundColor = computed(() => {
     return {
         'bg-red-600': props.test2 > 4,
