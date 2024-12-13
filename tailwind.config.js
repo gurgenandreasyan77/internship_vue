@@ -3,13 +3,14 @@ import colors from 'tailwindcss/colors'
 module.exports = {
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
+
     colors: {
       ...colors,
       'custom': '#6566e2',
     },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      sans: ['Graphic', 'sans-serif'],
+      serif: ['Merryweather', 'serif'],
     },
     extend: {
       spacing: {
@@ -28,3 +29,4 @@ module.exports = {
     }
   }
 }
+
