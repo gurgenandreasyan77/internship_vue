@@ -1,18 +1,19 @@
 <template>
     <div class="text-xl" >
         <p>
-            {{ test }}
+            {{ numberStore.testNumber1 }}
         </p>
-        <p class="text-custom">{{ test2 }}</p>
-        <p>{{ test3.number }}</p>
+        <p class="text-custom">{{ numberStore.testNumber2 }}</p>
+        <p>{{ numberStore.testNumber3 }}</p>
         <p>{{ sum }}</p>
-        <input class="border border-red" type="number" v-model="customTest">
+        <input class="border border-red" type="number" v-model="numberStore.testNumber2">
         <slot/>
     </div>
 </template>
 
 <script setup>
 import {computed, onBeforeUnmount, onUnmounted, ref, toRef, watch} from "vue";
+import {useNumbersStore} from "@/store/numbersStore.js";
 
 const props = defineProps({
     test: Number,
@@ -30,6 +31,7 @@ const props = defineProps({
 
 const emit = defineEmits(['update:test2']);
 const customTest = toRef(props.test2)
+const numberStore = useNumbersStore()
 
 watch(props.test2, () => {
   customTest.value = props.test2

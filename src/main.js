@@ -6,6 +6,7 @@ import routes from './routes/routes.js'
 
 import {createRouter, createWebHistory} from 'vue-router'
 import axios from "@/plugins/axios.js";
+import {createPinia} from "pinia";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -18,8 +19,10 @@ router.beforeEach((to, from, next) => {
         next()
     }
 })
+const pinia = createPinia()
 
 const app = createApp(App)
 
 app.use(axios)
+app.use(pinia)
 app.use(router).mount('#app')

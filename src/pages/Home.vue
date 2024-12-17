@@ -4,13 +4,13 @@
             :test="test"
             v-model:test2="test2"
             :test3="test3"
-            :sum="sum"
+            :sum="numberStore.sum"
             class="bg-amber-400"
         >
             <p class="text-2xl text-white">Slot content</p>
         </Numbers>
     </div>
-    <input type="number" v-model="test3.number" class="border p-2">
+    <input type="number" v-model="test3" class="border p-2">
   <template v-for="number in array">
     Step {{ number }}
   </template>
@@ -44,33 +44,30 @@ import {
 import Numbers from "@/components/Numbers.vue";
 import {useRoute, useRouter} from "vue-router";
 import {$axios} from "@/plugins/axios.js";
+import {useNumbersStore} from "@/store/numbersStore.js";
 
 const router = useRouter()
 const route = useRoute()
 
-let test = 1;
-const test2 = ref(2)
-const test3 = reactive({
-    number: 3,
-})
+const numberStore = useNumbersStore()
+
+let test = ref(numberStore.testNumber1);
+const test2 = ref(numberStore.testNumber2)
+const test3 = ref(numberStore.testNumber3)
 
 const array = [1, 2, 3, 4, 5]
 console.log('created');
 
-const sum = computed(() => {
-    return test + test2.value + test3.number
-})
-
 function up() {
-    test +=1;
-    test2.value +=1;
-    test3.number +=1;
+  numberStore.setTestNumber1(numberStore.testNumber1 + 1)
+  numberStore.setTestNumber2(numberStore.testNumber2 + 1)
+  numberStore.setTestNumber3(numberStore.testNumber3 + 1)
 }
 
 function down() {
-    test -=1;
-    test2.value -=1;
-    test3.number -=1;
+    numberStore.setTestNumber1(numberStore.testNumber1 - 1)
+    numberStore.setTestNumber2(numberStore.testNumber2 - 1)
+    numberStore.setTestNumber3(numberStore.testNumber3 - 1)
 }
 
 // watch(sum, (value, oldValue) => {
@@ -100,20 +97,20 @@ async function getSpecifications() {
   //     asd:'asdasdsa',
   //   }
   // })
-  try {
-    const res2 = await $axios.post('/companies', {
-      test: 'asdasdasd'
-    }, {
-      params: {
-        asd:'asdasdsa',
-      },
-      headers: {
-        'content-type': 'multipart/form-data',
-      }
-    })
-  } catch (error) {
-    console.log(error)
-  }
+  // try {
+  //   const res2 = await $axios.post('/companies', {
+  //     test: 'asdasdasd'
+  //   }, {
+  //     params: {
+  //       asd:'asdasdsa',
+  //     },
+  //     headers: {
+  //       'content-type': 'multipart/form-data',
+  //     }
+  //   })
+  // } catch (error) {
+  //   console.log(error)
+  // }
   // const res = await $axios.put('/companies')
   // const res = await $axios.delete('/companies')
 }
