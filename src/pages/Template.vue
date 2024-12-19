@@ -1,6 +1,6 @@
 <!--<script>-->
 <!--if (localStorage.getItem("userToken")){-->
-<!--  alert();-->
+<!--  router.push-->
 <!--}else {-->
 <!--  router.push({name: 'login'});-->
 <!--}-->
@@ -21,7 +21,12 @@
         <a href="#" class="text-white font-light hover:text-gray-300">Tools & Tips</a>
         <a href="#" class="text-white font-light hover:text-gray-300">Contact</a>
       </nav>
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-3" v-if="Cookies.get('token')">
+        <button class="bg-red-600 text-white py-2 px-6 rounded-md hover:bg-red-700 transition duration-300"
+                @click="Logout">Exit
+        </button>
+      </div>
+      <div class="flex items-center gap-3" v-else>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-[40px] h-[40px]" viewBox="0 0 50 50">
             <path
@@ -40,29 +45,39 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label for="first-name" class="block text-sm font-medium mb-1">First name *</label>
-            <input type="text" id="first-name" v-model="form.firstName" class="block w-full border-b border-gray-400 bg-transparent py-2 text-sm focus:outline-none focus:border-white" required/>
+            <input type="text" id="first-name" v-model="form.firstName"
+                   class="block w-full border-b border-gray-400 bg-transparent py-2 text-sm focus:outline-none focus:border-white"
+                   required/>
           </div>
           <div>
             <label for="last-name" class="block text-sm font-medium mb-1">Last name *</label>
-            <input type="text" id="last-name" v-model="form.lastName" class="block w-full border-b border-gray-400 bg-transparent py-2 text-sm focus:outline-none focus:border-white" required/>
+            <input type="text" id="last-name" v-model="form.lastName"
+                   class="block w-full border-b border-gray-400 bg-transparent py-2 text-sm focus:outline-none focus:border-white"
+                   required/>
           </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label for="email" class="block text-sm font-medium mb-1">Email *</label>
-            <input type="email" id="email" v-model="form.email" class="block w-full border-b border-gray-400 bg-transparent py-2 text-sm focus:outline-none focus:border-white" required/>
+            <input type="email" id="email" v-model="form.email"
+                   class="block w-full border-b border-gray-400 bg-transparent py-2 text-sm focus:outline-none focus:border-white"
+                   required/>
           </div>
           <div>
             <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
-            <input type="text" id="subject" v-model="form.subject" class="block w-full border-b border-gray-400 bg-transparent py-2 text-sm focus:outline-none focus:border-white"/>
+            <input type="text" id="subject" v-model="form.subject"
+                   class="block w-full border-b border-gray-400 bg-transparent py-2 text-sm focus:outline-none focus:border-white"/>
           </div>
         </div>
         <div>
           <label for="message" class="block text-sm font-medium mb-1">Message *</label>
-          <textarea id="message" v-model="form.message" rows="5" class="block w-full border-b border-gray-400 bg-transparent py-2 text-sm focus:outline-none focus:border-white" required></textarea>
+          <textarea id="message" v-model="form.message" rows="5"
+                    class="block w-full border-b border-gray-400 bg-transparent py-2 text-sm focus:outline-none focus:border-white"
+                    required></textarea>
         </div>
         <div class="text-center">
-          <button type="submit" class="px-6 py-3 bg-white text-blue-900 font-semibold tracking-wide hover:bg-gray-200 transition">
+          <button type="submit"
+                  class="px-6 py-3 bg-white text-blue-900 font-semibold tracking-wide hover:bg-gray-200 transition">
             Submit
           </button>
         </div>
@@ -94,12 +109,14 @@
         <div class="flex space-x-4 mb-4">
           <a href="#" class="text-blue-300 hover:text-blue-400">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.325v21.351C0 23.403.597 24 1.325 24h11.494v-9.294H9.691v-3.622h3.128V8.408c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.465.099 2.795.144v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.59l-.467 3.622h-3.123V24h6.116c.729 0 1.325-.597 1.325-1.324V1.325C24 .597 23.403 0 22.675 0z"/>
+              <path
+                  d="M22.675 0h-21.35C.597 0 0 .597 0 1.325v21.351C0 23.403.597 24 1.325 24h11.494v-9.294H9.691v-3.622h3.128V8.408c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.465.099 2.795.144v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.763v2.31h3.59l-.467 3.622h-3.123V24h6.116c.729 0 1.325-.597 1.325-1.324V1.325C24 .597 23.403 0 22.675 0z"/>
             </svg>
           </a>
           <a href="#" class="text-blue-300 hover:text-blue-400">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 4.557c-.883.392-1.833.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.723-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.719 0-4.924 2.205-4.924 4.924 0 .386.044.762.128 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.423.724-.666 1.562-.666 2.475 0 1.708.869 3.213 2.188 4.096-.807-.026-1.566-.247-2.229-.616v.062c0 2.385 1.697 4.374 3.946 4.827-.413.112-.849.171-1.296.171-.317 0-.626-.03-.928-.087.627 1.956 2.444 3.379 4.6 3.419-1.685 1.32-3.808 2.105-6.115 2.105-.397 0-.789-.023-1.175-.069 2.179 1.398 4.768 2.212 7.548 2.212 9.051 0 13.999-7.496 13.999-13.986 0-.213-.005-.425-.014-.637.961-.695 1.796-1.562 2.457-2.549z"/>
+              <path
+                  d="M24 4.557c-.883.392-1.833.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.723-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.719 0-4.924 2.205-4.924 4.924 0 .386.044.762.128 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.423.724-.666 1.562-.666 2.475 0 1.708.869 3.213 2.188 4.096-.807-.026-1.566-.247-2.229-.616v.062c0 2.385 1.697 4.374 3.946 4.827-.413.112-.849.171-1.296.171-.317 0-.626-.03-.928-.087.627 1.956 2.444 3.379 4.6 3.419-1.685 1.32-3.808 2.105-6.115 2.105-.397 0-.789-.023-1.175-.069 2.179 1.398 4.768 2.212 7.548 2.212 9.051 0 13.999-7.496 13.999-13.986 0-.213-.005-.425-.014-.637.961-.695 1.796-1.562 2.457-2.549z"/>
             </svg>
           </a>
         </div>
@@ -111,7 +128,19 @@
 
 <script setup>
 import {useRouter} from "vue-router";
-import {reactive, ref} from "vue";
+import Cookies from 'js-cookie';
+import {
+  computed,
+  onBeforeMount,
+  onBeforeUnmount,
+  onBeforeUpdate,
+  onMounted,
+  onUnmounted,
+  onUpdated,
+  reactive,
+  ref,
+  watch
+} from "vue";
 
 const form = reactive({
   firstName: ref(""),
@@ -121,5 +150,15 @@ const form = reactive({
   message: "",
 })
 
+const headerButton = ref('');
 const router = useRouter()
+
+
+function Logout() {
+  if (Cookies.get('token')) {
+    Cookies.remove('token', {path: '/'});
+  }
+  router.push({name: 'login'});
+}
 </script>
+

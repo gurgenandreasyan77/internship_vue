@@ -10,7 +10,7 @@ import Registration from "@/pages/Registration.vue";
 
 export default [
     {
-        path: '/home',
+        path: '/',
         component: Template,
         name: 'template',
     },
@@ -25,7 +25,7 @@ export default [
         name: 'register',
     },
     {
-        path: '/testWorks',
+        path: '/home',
         component: Home,
         name: 'home',
     },

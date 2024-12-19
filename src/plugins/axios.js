@@ -1,5 +1,4 @@
 import Axios from "axios";
-import config from "tailwindcss/defaultConfig.js";
 
 export const $axios = Axios.create({
     baseURL: import.meta.env.VITE_BACKEND_URL,
