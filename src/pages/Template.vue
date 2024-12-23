@@ -177,12 +177,12 @@
         </div>
         <div class="text-center">
           <button type="submit"
-                  class="px-6 py-3 bg-white text-blue-900 font-semibold tracking-wide hover:bg-gray-200 transition">
+                  class="px-6 py-3 bg-white text-blue-900 font-semibold tracking-wide hover:bg-transparent hover:text-white border border-white transition-all duration-[500ms]">
             Submit
           </button>
         </div>
       </form>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.419976389337!2d44.49902878454366!3d40.22196349791306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406a970002cae971%3A0x7c3be6443d627fcc!2sCODEIDEA%20LLC!5e0!3m2!1sru!2sam!4v1734960023074!5m2!1sru!2sam" class="w-[850px] h-[400px] mt-12" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.419976389337!2d44.49902878454366!3d40.22196349791306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406a970002cae971%3A0x7c3be6443d627fcc!2sCODEIDEA%20LLC!5e0!3m2!1sru!2sam!4v1734960023074!5m2!1sru!2sam" class="w-[850px] h-[350px] mt-12" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
   <footer class="bg-blue-950 text-white py-10">
