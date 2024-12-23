@@ -7,7 +7,7 @@
 <!--</script>-->
 
 <template>
-  <header class="bg-blue-900">
+  <header class="bg-blue-900 fixed top-0 w-full z-50">
     <div class="flex justify-between items-center px-6 py-4">
       <div class="text-white text-xl font-light">
         <a href="#">JAMES CONSULTING</a>
@@ -37,7 +37,107 @@
       </div>
     </div>
   </header>
-
+  <section
+      class="bg-[url('https://static.wixstatic.com/media/82fcd3_47a465bb9c6f4b52a0cc83f281806af8~mv2.jpg')] bg-cover bg-center h-screen w-full">
+    <div class="bg-white absolute bottom-0 left-[330px] w-[835px] h-[280px] z-10">
+      <div class="p-7 text-center">
+        <div class="w-full p-2">
+          <p class="text-2xl font-thin">Developing Innovative Strategies</p>
+        </div>
+        <div class="w-full mt-[20px]">
+          <h1 class="text-6xl font-thin">ACHIEVING GROWTH</h1>
+        </div>
+        <div class="w-full absolute bottom-[20px] bg-transparent">
+          <a href="#"
+             class="border border-blue-950 text-blue-950 px-[40px] py-[20px] hover:bg-blue-950 hover:text-white transition-all duration-[500ms]">
+            Free Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-white w-full h-screen flex justify-center items-center p-10">
+    <div class="text-center flex justify-around">
+      <div class="w-7/12 p-8 mx-10 font-medium">
+        <h3 class="text-3xl mb-6">SERVICES</h3> <!-- Увеличен нижний отступ -->
+        <div class="mt-12 mb-10">
+          <p class="text-slate-700">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click
+            “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for
+            you to tell a story and let your users know a little more about you.</p>
+        </div>
+        <div class="w-full mt-10 bg-transparent">
+          <a href="#"
+             class="border border-blue-950 text-blue-950 px-[40px] py-[20px] hover:bg-blue-950 hover:text-white transition-all duration-[500ms]">
+            More Info
+          </a>
+        </div>
+      </div>
+      <div class="w-7/12 p-8 mx-10 font-medium">
+        <h3 class="text-3xl mb-6">PROJECTS</h3> <!-- Увеличен нижний отступ -->
+        <div class="mt-12 mb-10">
+          <p class="text-slate-700">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click
+            “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for
+            you to tell a story and let your users know a little more about you.</p>
+        </div>
+        <div class="w-full mt-10 bg-transparent">
+          <a href="#"
+             class="border border-blue-950 text-blue-950 px-[40px] py-[20px] hover:bg-blue-950 hover:text-white transition-all duration-[500ms]">
+            More Info
+          </a>
+        </div>
+      </div>
+      <div class="w-7/12 p-8 mx-10 font-medium">
+        <h3 class="text-3xl mb-6">CLIENTS</h3> <!-- Увеличен нижний отступ -->
+        <div class="mt-12 mb-10">
+          <p class="text-slate-700">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click
+            “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for
+            you to tell a story and let your users know a little more about you.</p>
+        </div>
+        <div class="w-full mt-10 bg-transparent">
+          <a href="#"
+             class="border border-blue-950 text-blue-950 px-[40px] py-[20px] hover:bg-blue-950 hover:text-white transition-all duration-[500ms]">
+            More Info
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+      class="bg-[url('https://static.wixstatic.com/media/82fcd3_96376843bac9407bb5b50891b78b6210~mv2.jpg')] bg-cover bg-center bg-fixed h-screen w-full">
+    <div class="w-full h-full bg-slate-300 bg-opacity-95 flex items-center justify-center">
+      <div class="w-5/12 space-y-6 text-center flex flex-col items-center justify-center pt-6">
+        <!-- pt-6 для верхнего отступа -->
+        <h2 class="text-4xl">ABOUT US</h2>
+        <div class="space-y-12">
+          <div class="space-y-6 text-zinc-900">
+            <div class="text-center">
+              <p class="text-base">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click
+                “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag
+                and
+                drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users
+                know
+                a little more about you.</p>
+            </div>
+            <div class="text-center">
+              <p class="text-base">This is a great space to write a long text about your company and your services. You
+                can use this space to go into a little more detail about your company. Talk about your team and what
+                services you provide. Tell your visitors the story of how you came up with the idea for your business
+                and
+                what makes you different from your competitors. Make your company stand out and show your visitors who
+                you
+                are.</p>
+            </div>
+          </div>
+          <div class="w-full bg-transparent"> <!-- увеличили отступ сверху -->
+            <a href="#"
+               class="border border-blue-950 text-blue-950 px-[40px] py-[20px] hover:bg-blue-950 hover:text-white transition-all duration-[500ms]">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="bg-blue-900 text-white py-12">
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-center text-3xl font-bold tracking-wide mb-8">CONTACT</h2>
@@ -82,6 +182,7 @@
           </button>
         </div>
       </form>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.419976389337!2d44.49902878454366!3d40.22196349791306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406a970002cae971%3A0x7c3be6443d627fcc!2sCODEIDEA%20LLC!5e0!3m2!1sru!2sam!4v1734960023074!5m2!1sru!2sam" class="w-[850px] h-[400px] mt-12" style="border:0; pointer-events: none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
   <footer class="bg-blue-950 text-white py-10">
@@ -95,13 +196,13 @@
 
       <div class="mb-6 md:mb-0">
         <h2 class="font-bold text-lg mb-2">MENU</h2>
-        <ul>
-          <li><a href="#" class="text-blue-300 hover:underline">About</a></li>
-          <li><a href="#" class="text-blue-300 hover:underline">Projects</a></li>
-          <li><a href="#" class="text-blue-300 hover:underline">Services</a></li>
-          <li><a href="#" class="text-blue-300 hover:underline">Plans & Pricing</a></li>
-          <li><a href="#" class="text-blue-300 hover:underline">Tools & Tips</a></li>
-          <li><a href="#" class="text-blue-300 hover:underline">Contact</a></li>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-white hover:text-blue-300">About</a></li>
+          <li><a href="#" class="text-white hover:text-blue-300">Projects</a></li>
+          <li><a href="#" class="text-white hover:text-blue-300">Services</a></li>
+          <li><a href="#" class="text-white hover:text-blue-300">Plans & Pricing</a></li>
+          <li><a href="#" class="text-white hover:text-blue-300">Tools & Tips</a></li>
+          <li><a href="#" class="text-white hover:text-blue-300">Contact</a></li>
         </ul>
       </div>
       <div>
@@ -160,5 +261,11 @@ function Logout() {
   }
   router.push({name: 'login'});
 }
+
+onBeforeMount(() => {
+  if (!Cookies.get('token')) {
+    router.push({name: 'login'})
+  }
+})
 </script>
 

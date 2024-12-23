@@ -3,13 +3,6 @@
     <div
         class="w-full mx-auto bg-white rounded-lg shadow dark:border sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
       <div class="relative p-6 space-y-4 md:space-y-6 sm:p-8" id="login_form">
-        <button
-            class="text-gray-500 bg-gray-200 dark:text-white dark:bg-gray-700 p-3 rounded-full focus:outline-none transition-all transform hover:scale-110 hover:rounded-xl shadow-md"
-            @click="router.push({name: 'template'})">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-5 h-5">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">Sign in to
           your account</h1>
         <form class="space-y-4 md:space-y-6" @submit.prevent="login">
